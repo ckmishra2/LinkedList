@@ -9,14 +9,14 @@ class Node {
 		this.next = null;
 	}
 }
-
+// creation of simple linked list
 public class LinkedList{
 	Node head;
 	int size;
 LinkedList(){
 	this.head=null;
 }
-	void insertAtfirst(int value) {
+	void insert(int value) {
 	Node n = new Node(value);
 			n.next=head;
 			head=n;
@@ -26,15 +26,15 @@ LinkedList(){
 	void printLL() {
 		Node temp = this.head;
 		while(temp!=null){
-		System.out.print( " --> " +temp.data );
+		System.out.print(  temp.data +" --> " );
 		temp=temp.next;
 	}
 	}
 	public static void main(String[] args) {
 		LinkedList LL= new LinkedList();
-		LL.insertAtfirst(70);
-		LL.insertAtfirst(30);
-		LL.insertAtfirst(56);
+		LL.insert(70);//
+		LL.insert(30);
+		LL.insert(56);
 		LL.printLL();
 		
 	}
