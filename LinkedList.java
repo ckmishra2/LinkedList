@@ -12,6 +12,7 @@ class Node {
 // creation of simple linked list
 //creation of linked list by adding 30 and 56 to 70
 //creation of Linked List by appending 30 and 70 to 56
+//ability to insert 30 between 56 and 70
 public class LinkedList{
 	Node head;
 	int size;
@@ -36,6 +37,24 @@ LinkedList(){
 		}
 		temp.next=n;
 		size++;
+	}
+	
+	void insertAtanyPos(int value,int pos) {
+		Node n = new Node(value);
+		if(size+1<pos) {
+			System.out.println("position is greater than size");
+			return;
+		}
+		Node temp = head;
+		int i = 1;
+		while(i!=pos-1) {
+			i++;
+			temp=temp.next;
+			
+		}
+		n.next = temp.next;
+		temp.next = n;
+		size++;
 		
 	}
 				
@@ -48,9 +67,9 @@ LinkedList(){
 	}
 	public static void main(String[] args) {
 		LinkedList LL= new LinkedList();
-		LL.insertAtFirst(56);//
-		LL.insertAtLast(30);
-		LL.insertAtLast(70);
+		LL.insertAtFirst(56);//56 is first created by using insertAtfirst method
+		LL.insertAtanyPos(30,2);//insert 30 by using insertAtanyPos method
+		LL.insertAtLast(70);//next append 70 by using insertAtLast method
 		LL.printLL();
 		
 	}
